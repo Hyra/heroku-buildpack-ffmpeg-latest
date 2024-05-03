@@ -81,7 +81,8 @@ cd ffmpeg
     --enable-libtheora \
     --enable-libvpx \
     --enable-gpl \
-    --disable-inline-asm
+    --disable-inline-asm \
+    --disable-x86asm
 make ffmpeg
 
 echo "Installation successful" | output
