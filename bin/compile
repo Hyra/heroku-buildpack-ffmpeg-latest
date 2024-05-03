@@ -26,4 +26,5 @@ cd ffmpeg
             --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame \
             --enable-libopus --enable-libvorbis --enable-libvpx \
             --enable-libx264 --enable-libx265 --enable-nonfree \
+            --disable-x86asm \
             --enable-openssl
