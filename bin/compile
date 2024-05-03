@@ -12,6 +12,18 @@ PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:${HOME}/vendor/ffmpeg"' >> $PROFILE_PATH
 
-apt-get update
+git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
+cd ffmpeg
 
-apt-get install ffmpeg
+./configure \
+            --prefix="$USR_LOCAL_PREFIX" \
+            --disable-static --enable-shared \
+            --extra-cflags="-I$USR_LOCAL_PREFIX/include $NVIDIA_CFLAGS" \
+            --extra-ldflags="-L$USR_LOCAL_PREFIX/lib $NVIDIA_LDFLAGS" \
+            --extra-libs='-lpthread -lm' \
+            --bindir="$USR_LOCAL_PREFIX/bin" \
+            --enable-gpl --enable-libaom --enable-libass \
+            --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame \
+            --enable-libopus --enable-libvorbis --enable-libvpx \
+            --enable-libx264 --enable-libx265 --enable-nonfree \
+            --enable-openssl
