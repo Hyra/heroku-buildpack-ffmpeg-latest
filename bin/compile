@@ -74,6 +74,7 @@ echo 'export PATH="$PATH:${HOME}/vendor/ffmpeg"' >> $PROFILE_PATH
 
 curl -O https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
 tar xf ffmpeg-snapshot.tar.bz2
+apt-get update
 apt-get install yasm
 cd ffmpeg
 ./configure --enable-gpl --enable-nonfree --enable-libx265 --enable-libfdk-aac
