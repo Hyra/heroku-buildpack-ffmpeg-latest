@@ -16,6 +16,7 @@ git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
 cd ffmpeg
 
 ./configure \
+            --extra-libs="-lpthread -lm" \
             --prefix="$USR_LOCAL_PREFIX" \
             --disable-static --enable-shared \
             --extra-cflags="-I$USR_LOCAL_PREFIX/include $NVIDIA_CFLAGS" \
