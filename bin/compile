@@ -22,7 +22,7 @@ cd ffmpeg
             --extra-ldflags="-L$USR_LOCAL_PREFIX/lib $NVIDIA_LDFLAGS" \
             --extra-libs='-lpthread -lm' \
             --bindir="$USR_LOCAL_PREFIX/bin" \
-            --enable-gpl --enable-libaom --enable-libass \
+            --enable-gpl --enable-libaom \
             --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame \
             --enable-libopus --enable-libvorbis --enable-libvpx \
             --enable-libx264 --enable-libx265 --enable-nonfree \
